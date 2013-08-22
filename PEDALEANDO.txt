@@ -1,0 +1,35 @@
+Sitio para donde se pueda conjuntar un grupo de diferentes Estados/Ciudades
+
+Crear usuarios con permisos especificos para:
+
+ 1.- Publicar Eventos con 2 tipos de img, 1era cartel del evento, 2da imagenes de eventos anteriores
+		1.1.- Comentarios a los eventos.
+		
+ 2.- Crear Galerias
+	 	2.1.- Subir Fotografias
+		2.2.- Comentarios a las fotografias.
+		
+ 3.- Crear Encuestas
+ 
+4.- Los visitantes puedan registrarse en el sitio para:
+ 	4.1.- Ser informados de los eventos
+ 		a. - Eventos, notificaciones de sus grupos
+		 
+5.- Directorio de grupos ciclistas por Ciudad
+	5.1.- Poder publicar sus dias/horario de recorrido.
+	
+	
+
+ 
+ Modelos.
+ 
+ Evento
+ 	nombre
+	fecha
+	imagen
+	descripcion
+	fotografias_previas
+	usuario
+	
+	
+	
