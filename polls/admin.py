@@ -20,7 +20,8 @@ class PollAdmin(admin.ModelAdmin):
 	list_filter = ['pub_date']
 	date_hierarchy = 'pub_date'
 	
-
+    
 admin.site.register(Poll, PollAdmin)
+
 
 #admin.site.register(Choice)

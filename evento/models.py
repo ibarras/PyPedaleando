@@ -1,29 +1,22 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
 class Evento(models.Model):
     nombre   = models.CharField(max_length=200)
     fecha    = models.DateField('date published')
-    imagen   = models.CharField(max_length=200)
+    imagen   = models.FileField(max_length=200, upload_to = 'eventos')
     descripcion = models.TextField()
-	usuario  - models.IntegerField()
+    usuario     = models.ForeignKey(User)
     
-	def __str__(self):
-		return self.nombre
+    def __str__(self):
+        return self.nombre
 
-
-class FotoEvento(models.Model):
-	foto   = models.ForeignKey(Evento)
-
-	def __str__(self):
-		return self.foto
-
- Evento
- 	nombre
-	fecha
-	imagen
-	descripcion
-	fotografias_previas fk
-	usuario
-
+class Foto(models.Model):
+    evento = models.ForeignKey(Evento)
+    foto = models.FileField(max_length=100, upload_to = 'eventos')
+    
+    def __str__(self):
+        return self.foto
