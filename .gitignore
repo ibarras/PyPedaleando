@@ -1,1 +1,6 @@
-settings.py
+# Python compiled files
+*.pyc
+
+#vim files
+
+*.sw*
