@@ -1,7 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Hello, and Fuck")
+    template = "index.html"
+    welcome_string = "Hello and fuck"
+    return render(request, template, locals())
     
 def detail(request, evento_id):
     return HttpResponse("Buscando el evento %s " % evento_id)
