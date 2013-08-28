@@ -1,73 +1,134 @@
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
-<title>{{ title }}</title>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <title>{{ title }}</title>
 
-<!-- load CSS -->
-<link rel="stylesheet" href="/static/css/normalize.css" />
-<link rel="stylesheet" href="/static/css/foundation.css" />
+            <!-- load CSS -->
+            <link rel="stylesheet" href="/static/css/normalize.css" />
+            <link rel="stylesheet" href="/static/css/foundation.css" />
 
-<!-- load JS -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="/static/js/vendor/custom.modernizr.js"></script>
+            <!-- load JS -->
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <script src="/static/js/vendor/custom.modernizr.js"></script>
+        </head>
+        <body>
+
+            <div class="sticky">
+                <nav class="top-bar">
+                <ul class="title-area">
+                    <li class="name">
+                    <h1><a href="/">Pedaleando</a></h1>
+                    </li>
+                    <li class="toggle-topbar menu-icon"><a href="/"><span>Menu</span></a>
+                    </li>
+                </ul>
+
+                <section class="top-bar-section">
+                <ul class="left">
+                    <li class="divider"></li>
+                    <li class="active"><a href="#">Eventos</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Encuestas</a></li>
+                    <li class="divider"></li>
+                    <li class="has-dropdown"><a href="#">Galerias</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">Fotos</a></li>
+                    </ul>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            
+                <ul class="right">
+                    <li class="divider"></li>
+
+                    {% if user.is_authenticated %}
+                        <li class="disabled"><a href="#">{{ user.get_full_name }}</a></li>
+                        <li class="has-dropdown"><a href="#">Configuracion</a>
+                    {% else %}
+                        <li class="active"><a href="#">Iniciar sesion</a></li>
+                    {% endif %}
+                </ul><!-- right side nav -->
+
+                </section>
+                </nav>
+            </div>
+
+            <!-- Main Blog Content -->
+            <div class="large-9 columns" role="content">
+                {%block content%} <!-- body content here --> {%endblock %}
+            </div>
+
+            <!-- End Main Content -->
+
+            <!-- Sidebar -->
+            <aside class="large-3 columns">
+
+            <h5>Categories</h5>
+            <ul class="side-nav">
+                <li><a href="#">News</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">Fun</a></li>
+                <li><a href="#">Weasels</a></li>
+            </ul>
+
+            <div class="panel">
+                <h5>Featured</h5>
+                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+                <a href="#">Read More &rarr;</a>
+            </div>
+
+            </aside>
+            <!-- End Sidebar -->
+
+        </div>
+
+        <!-- End Main Content and Sidebar -->
 
 
-</head>
-<body>
+        <!-- Footer -->
 
-<div class="sticky">
-<nav class="top-bar">
-<ul class="title-area">
-<li class="name">
-<h1><a href="/">Doucherism </a></h1>
-</li>
-<li class="toggle-topbar menu-icon"><a href="/"><span>Menu</span></a>
-</li>
-</ul>
+        <footer class="row">
+        <div class="large-12 columns">
+            <hr />
+            <div class="row">
+                <div class="large-6 columns">
+                    <p>&copy; Copyright no one at all. Go to town.</p>
+                </div>
+                <div class="large-6 columns">
+                    <ul class="inline-list right">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </footer>
 
-<section class="top-bar-section">
-<ul class="left">
-<li class="divider"></li>
-<li class="active"><a href="#">Eventos</a></li>
-<li class="divider"></li>
-<li><a href="#">Encuestas</a></li>
-<li class="divider"></li>
-<li class="has-dropdown"><a href="#">Galerias</a>
-<ul class="dropdown">
-<li><a href="#">Videos</a></li>
-<li><a href="#">Fotos</a></li>
-</ul>
-</li>
-<li class="divider"></li>
-</ul>
-</section>
+        <script>
+            document.write('<script src=' +
+                ('__proto__' in {} ? '/static/js/vendor/zepto' : '/static/js/vendor/jquery') +
+                '.js><\/script>')
+            </script>
 
-</nav>
-</div>
+            <script src="/static/js/foundation.min.js"></script>
 
-{%block content%} <!-- body content here --> {%endblock %}
+            <script>
+                $(document).foundation();
+            </script>
 
-<script>
-document.write('<script src=' +
-		('__proto__' in {} ? '/static/js/vendor/zepto' : '/static/js/vendor/jquery') +
-		'.js><\/script>')
-</script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                        $(".fancybox").fancybox();
+                        });
+                    </script>
 
-<script src="/static/js/foundation.min.js"></script>
-
-<script>
-$(document).foundation();
-</script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-		$(".fancybox").fancybox();
-		});
-</script>
-
-</body>
-</html>
+                </body>
+            </html>
