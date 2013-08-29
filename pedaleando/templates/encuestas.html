@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% if encuestas_listado %}
+        <ul class="disc">
+            {% for e in encuestas_listado %}
+            <h2> {{ e.question }}</h2>
+                {% for options in e.choice_set.all %}
+                    <ul>
+                        <li>{{ options.choice }} - {{ options.votes }}</li>
+                    </ul>
+                </ul>
+                {% endfor %}
+            {% empty %}
+                No existen encuestas disponibles
+            {% endfor %}
+    {% endif %}
+
+{% endblock %}
