@@ -21,9 +21,9 @@ Crear usuarios con permisos especificos para:
 	
 
  
- Modelos.
+ Modelos
  
- Evento
+ EVENTO
  	nombre
 	fecha
 	imagen
@@ -31,5 +31,53 @@ Crear usuarios con permisos especificos para:
 	fotografias_previas
 	usuario
 	
+GALERIA:
+   nombre
+
+FOTO_GALERIA
+   galeria
+   foto
+   tag
+   
+COMENTARIO_FOTO
+  foto
+  comentario
+  
+  
+DIRECTORIO_ESTADO
+   nombre
+   pais
+
+DIRECTORIO_CIUDAD
+   nombre
+   estado
+   
+DIRECTORIO_GRUPO_CICLISTA
+   nombre
+   correo
+   *ruta
+   dias
+   horario
+   mapa
+   avatar
+   imagen *perfil
+   texto
+   
+DIRECTORIO_TALLER_CICLISTA
+   nombre * nombre del taller
+   correo
+   horario
+   telefono
+   contacto *nombre de la persona
+   direccion
+   mapa
+   avatar
+   imagen *perfil
+   texto
+
 	
+	
+	
+	
+
 	
